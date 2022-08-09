@@ -360,6 +360,7 @@ letter-spacing: 3%;
   width:448px;
   padding-left:16px;
   padding-top: 12px;
+  border-color:rgba(33, 33, 33, 0.2)
 }
 
 .form-comments:hover{
