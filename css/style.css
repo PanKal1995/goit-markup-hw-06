@@ -240,14 +240,12 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .modal {
-
-  height: 581px;
+  padding: 40px;
   background:var(--text-color-white);
   transform: translate(-50%, -50%) scale(1) rotate(360deg);
   left: 50%;
   top: 50%;
   position: absolute;
-  width: 528px;
   border-radius: 4px;
   
 }
@@ -299,8 +297,6 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 
 .form-field{
   text-align: left;
-  padding-left: 40px;
-  padding-right: 40px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
@@ -312,7 +308,6 @@ transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 
 
 .form-title{
-  padding-top: 40px;
  font-weight: 700;
  font-size: 20px;
 line-height: 23.44px;
@@ -320,36 +315,59 @@ letter-spacing: 3%;
 
 }
 
+.modal-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .modal-input{
   width: 448px;
   height:40px;
   padding-left: 42px;
-  border-color:rgba(33, 33, 33, 0.2)
-  ;
+  border:1PX solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
-.modal-input:hover{
-  border-color: var(--hover-color);
+.modal-input:hover,
+.modal-input:focus{
+  border: 1px solid #2196f3;
+  outline: none;
 }
 
 .modal-icon{
-  position: relative;
-  top: 28px;
+  position: absolute;
+  top: 50%;
   left:15px;
+  transform:translateY(-50%) ;
   fill: currentColor;
+}
+
+.form-output:hover{
+  border: #188CE8;
+  color: #188CE8;
 }
 
 
 .form-details{
-
+position: relative;
   color: #757575;
   font-weight: 400;
   font-size: 12px;
   line-height: 14.06px;
   display: flex;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: 10px;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+
+.form-paragraph{
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #757575;
 }
 
 
@@ -360,12 +378,28 @@ letter-spacing: 3%;
   width:448px;
   padding-left:16px;
   padding-top: 12px;
-  border-color:rgba(33, 33, 33, 0.2)
+  border: 1PX solid rgba(33, 33, 33, 0.2);
+  border-radius:  4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-comments:hover{
-  border-color: #2196F3;
+  border: 1px solid #2196f3;
+  outline: none;
 }
+
+.form-data{
+position: relative;
+color: #757575;
+font-weight: 400;
+font-size: 12px;
+line-height: 14.06px;
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+}
+
+
 
 .form-conditions{
   color:#757575;
@@ -374,13 +408,22 @@ letter-spacing: 3%;
 
 .modal-form-button{
 margin-top: 15px;
-width: 200px;
-height: 50px;
 background-color: #2196F3;
 color: var(--bg-header-color);
 border-radius: 4px;
+border: none;
 cursor: pointer;
-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+font-family: "Roboto";
+font-weight: 700;
+padding: 16px 80px;
+font-size: 16px;
+}
+
+.modal-form-button:hover,
+.modal-form-button:focus{
+  background-color: #188CE8;
+  color: var(--text-color-white);
 }
 
 
@@ -697,7 +740,9 @@ padding: 27px;
   padding-top: 15px;
 }
 
-
+.subscription-form{
+  display:flex
+}
 
 .footer-label{
   color: var(--text-color-white);
@@ -707,35 +752,50 @@ padding: 27px;
 }
 
 .footer-input{
-  margin-top: 20px;
   width: 358px;
   height: 50px;
   background-color: #2F303A;
-  border-color: rgba(0, 0, 0, 0.15);
+  border: 1PX solid rgba(255, 255, 255, 0.3);
   color:rgba(255, 255, 255, 0.6) ;
   margin-right: 5px;
   border-radius: 4px;
   padding-left:13px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-input:hover,
+.footer-input:focus{
+  background-color: #2F303A;
+  outline: none;
+  border-color: var(--text-color-white);
 }
 
 .subscription-icon
 {
   fill:white;
-  margin-left: 30px;
+  margin-left: 10px;
 
 }
 
 .footer-button{
-  width: 200px;
+  padding: 0 60px;
   background-color: #2196F3;
   color: var(--text-color-white);
   border-radius: 4px;
   border-style: none;
-  margin-top: 20px;
+  cursor: pointer;
   justify-content: center;
   display: flex;
   align-items: center;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Roboto';
+  font-weight: 700;
+}
+
+.footer-button:hover,
+.footer-button:focus{
+  background-color: #188CE8;
+  color: var(--text-color-white);
 }
 
 
